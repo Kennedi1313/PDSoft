@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pretty-config xmlns="http://ocpsoft.org/schema/rewrite-config-prettyfaces" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces
+                      http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
+
+	<url-mapping id="cadastrarEmpresaPage">
+		<pattern value="/cadastrar" />
+		<view-id value="/empresa/cadastrar.jsf" />
+	</url-mapping>
+	
+	
+
+	<!-- 
+	O atributo opcional onPostback = "false" é usado quando precisamos acionar uma ação numa página na primeira vez que ela é solicitada, e 
+	não quando o usuário envia formulários nessa página, por exemplo. Isso garantirá que a ação nunca seja executada se o usuário estiver 
+	enviando um formulário JSF via POST (também chamado de postback). A ação só será executada se a página for acessada por meio de uma 
+	solicitação HTTP GET.
+	  -->
+
+
+</pretty-config>
