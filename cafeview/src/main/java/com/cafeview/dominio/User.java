@@ -22,7 +22,7 @@ public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "iduser")
-	private Long id;
+	private Integer id;
 	
 	@Column(name = "nome")
 	private String nome;
@@ -37,13 +37,16 @@ public class User implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Long getId() {
+
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+
+	public void setId(Integer id) {
 		this.id = id;
 	}
+
 
 	public String getNome() {
 		return nome;

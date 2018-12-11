@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 
+import org.hibernate.Session;
 import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
@@ -21,6 +22,9 @@ public abstract class AbstractDao<PK extends Serializable, T> extends HibernateD
 	@SuppressWarnings("unchecked")
 	public AbstractDao() {
 		this.entityBeanType = ((Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1]);
+	}
+	public Session getSession() {
+		return getHibernateTemplate().getSessionFactory().getCurrentSession();
 	}
 	@Override
 	public T getById(Serializable id) {

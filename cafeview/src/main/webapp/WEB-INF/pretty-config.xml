@@ -4,12 +4,57 @@
   xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces
                       http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
 
+	<url-mapping id="detalhesLogadoPage">
+		<pattern value="/empresa/detalhesLogado/#{cadastrarEmpresaFormBean.idEmpresa}" />
+		<action onPostback="false">#{cadastrarEmpresaFormBean.obterEmpresa}</action>
+		<view-id value="/empresa/detalhesLogado.jsf" />
+	</url-mapping>
+
+	<url-mapping id="detalhesPage">
+		<pattern value="/empresa/detalhes/#{cadastrarEmpresaFormBean.idEmpresa}" />
+		<action onPostback="false">#{cadastrarEmpresaFormBean.obterEmpresa}</action>
+		<view-id value="/empresa/detalhes.jsf" />
+	</url-mapping>
+
+	<url-mapping id="buscaPage">
+		<pattern value="/busca" />
+		<view-id value="/busca.jsf" />
+	</url-mapping>
+
 	<url-mapping id="cadastrarEmpresaPage">
-		<pattern value="/cadastrar" />
+		<pattern value="/empresa/cadastrar" />
 		<view-id value="/empresa/cadastrar.jsf" />
 	</url-mapping>
 	
+	<url-mapping id="cadastrarUserPage">
+		<pattern value="/user/cadastrar" />
+		<view-id value="/user/cadastrar.jsf" />
+	</url-mapping>
 	
+	<url-mapping id="cadastrarReviewPage">
+		<pattern value="/review/cadastrar" />
+		<view-id value="/review/cadastrar.jsf" />
+	</url-mapping>
+	
+	<url-mapping id="myReviewPage">
+		<pattern value="/review/myReviews" />
+		<view-id value="/review/myReviews.jsf" />
+	</url-mapping>
+	
+	<url-mapping id="loginUserPage">
+		<pattern value="/user/login" />
+		<view-id value="/user/login.jsf" />
+	</url-mapping>
+	
+	<url-mapping id="main">
+		<pattern value="/" />
+		<view-id value="/index.jsf" />
+	</url-mapping>
+	
+	<url-mapping id="mainLogado">
+		<pattern value="/indexLogado" />
+		<view-id value="/indexLogado.jsf" />
+	</url-mapping>
 
 	<!-- 
 	O atributo opcional onPostback = "false" é usado quando precisamos acionar uma ação numa página na primeira vez que ela é solicitada, e 

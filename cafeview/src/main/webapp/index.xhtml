@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Main</title>
+</h:head>
+<h:body>
+	<p:menubar>
+		<p:menuitem value="Main" url="/" />
+		<p:menuitem value="Cadastrar Usuario" url="/user/cadastrar" />
+		<p:menuitem value="Cadastrar Cafeteria" url="/empresa/cadastrar" />
+		<p:menuitem value="Login" url="/user/login" />
+	</p:menubar>
+	<h:form>
+
+		<h2>REVIEWS</h2>
+		<h:form>
+			<p:selectOneMenu value="#{cadastrarReviewFormBean.idBusca}">
+				<f:selectItem itemLabel="Selecione uma empresa."></f:selectItem>
+				<f:selectItems value="#{cadastrarReviewFormBean.empresas}"></f:selectItems>
+			</p:selectOneMenu>
+			<h:commandButton value="Buscar"
+				action="#{cadastrarReviewFormBean.getReviewsByIdEmpresa}">
+			</h:commandButton>
+		</h:form>
+		<p:dataTable var="review" value="#{cadastrarReviewFormBean.reviews}">
+			<p:column headerText="Nome" sortBy="#{review.nomeEmpresa}">
+				<h:outputLink value="empresa/detalhes/#{review.id}" action="">#{review.nomeEmpresa}</h:outputLink>
+			</p:column>
+
+			<p:column headerText="Estrela" sortBy="#{review.estrela}">
+				<h:outputText value="#{review.estrela}" />
+			</p:column>
+
+			<p:column headerText="Comentario">
+				<h:outputText value="#{review.comentario}" />
+			</p:column>
+
+			<p:column headerText="Usuario" sortBy="#{review.nomeUser}">
+				<h:outputText value="#{review.nomeUser}" />
+			</p:column>
+
+		</p:dataTable>
+
+	</h:form>
+</h:body>
+</html>

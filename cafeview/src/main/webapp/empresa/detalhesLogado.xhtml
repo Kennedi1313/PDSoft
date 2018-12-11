@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Detalhes da Empresa</title>
+</h:head>
+<h:body>
+	<h:form>
+		<p:menubar>
+			<p:menuitem value="Main" url="/indexLogado" />
+			<p:menuitem value="Minhas Reviews" url="/review/myReviews" />
+			<p:menuitem value="Cadastrar Review" url="/review/cadastrar" />
+			<p:menuitem value="Sair" url="/"></p:menuitem>
+		</p:menubar>
+		<br />
+
+		<p:growl id="messages"></p:growl>
+		<p:panelGrid columns="2">
+			<p:outputLabel value="Nome:"></p:outputLabel>
+			<p:outputLabel value="#{cadastrarEmpresaFormBean.empresa.nome}"></p:outputLabel>
+
+			<p:outputLabel value="Telefone:"></p:outputLabel>
+			<p:outputLabel value="#{cadastrarEmpresaFormBean.empresa.telefone}"></p:outputLabel>
+
+			<p:outputLabel value="Endereço:"></p:outputLabel>
+			<p:outputLabel value="#{cadastrarEmpresaFormBean.empresa.endereco}"></p:outputLabel>
+		</p:panelGrid>
+		<br />
+
+
+	</h:form>
+</h:body>
+</html>

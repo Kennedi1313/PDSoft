@@ -7,7 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cafeview.dao.UserDao;
 import com.cafeview.dominio.User;
-import com.cafeview.web.EmpresaModel;
 import com.cafeview.web.UserModel;
 
 @Service

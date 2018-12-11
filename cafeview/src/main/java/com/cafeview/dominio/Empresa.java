@@ -9,11 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "empresa")
 public class Empresa implements Serializable {
-	
+
 	/**
 	 * 
 	 */
@@ -21,22 +20,27 @@ public class Empresa implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_empresa")
-	private Long id;
-	
-	@Column(name = "nome_empresa")
+	@Column(name = "idempresa")
+	private Integer id;
+
+	@Column(name = "nome")
 	private String nome;
-	
-	
+
+	@Column(name = "telefone")
+	private String telefone;
+
+	@Column(name = "endereco")
+	private String endereco;
+
 	public Empresa() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -47,9 +51,21 @@ public class Empresa implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	
-	
-	
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
 
 }

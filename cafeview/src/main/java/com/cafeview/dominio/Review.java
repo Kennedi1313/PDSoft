@@ -9,11 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "review")
 public class Review implements Serializable {
-	
+
 	/**
 	 * 
 	 */
@@ -22,25 +21,62 @@ public class Review implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idreview")
-	private Long id;
-	
+	private Integer id;
+
 	@Column(name = "estrela")
 	private String estrela;
-	
+
 	@Column(name = "comentario")
 	private String comentario;
-	
-	
+
+	@Column(name = "empresa_idempresa")
+	private Integer idempresa;
+
+	@Column(name = "user_iduser")
+	private Integer iduser;
+
 	public Review() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getEstrela() {
+		return estrela;
+	}
+
+	public void setEstrela(String estrela) {
+		this.estrela = estrela;
+	}
+
+	public String getComentario() {
+		return comentario;
+	}
+
+	public void setComentario(String comentario) {
+		this.comentario = comentario;
+	}
+
+	public Integer getIdempresa() {
+		return idempresa;
+	}
+
+	public void setIdempresa(Integer idempresa) {
+		this.idempresa = idempresa;
+	}
+
+	public Integer getIduser() {
+		return iduser;
+	}
+
+	public void setIduser(Integer iduser) {
+		this.iduser = iduser;
 	}
 
 }

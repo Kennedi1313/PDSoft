@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Main</title>
+</h:head>
+<h:body>
+	<p:menubar>
+		<p:menuitem value="Main" url="/indexLogado" />
+		<p:menuitem value="Minhas Reviews" url="/review/myReviews" />
+		<p:menuitem value="Cadastrar Review" url="/review/cadastrar" />
+		<p:menuitem value="Sair" url="/"></p:menuitem>
+	</p:menubar>
+	<h:form>
+
+		<h2>MINHAS REVIEWS</h2>
+
+		<p:dataTable id="tabela" var="review" value="#{myReviewsFormBean.myReviews}">
+			<p:column headerText="Nome">
+				<h:outputText value="#{review.nomeEmpresa}" />
+			</p:column>
+
+			<p:column headerText="Estrela">
+				<h:outputText value="#{review.estrela}" />
+			</p:column>
+
+			<p:column headerText="Comentario">
+				<h:outputText value="#{review.comentario}" />
+			</p:column>
+
+			<p:column headerText="Usuario">
+				<h:outputText value="#{review.nomeUser}" />
+			</p:column>
+			<p:column headerText="">
+				<h:commandButton value="Excluir" action="#{myReviewsFormBean.deletar}" ajax="true" update="@form">
+					<f:param name="id" value="#{review.id}" />
+				</h:commandButton>
+			</p:column>	
+
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>

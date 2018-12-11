@@ -28,6 +28,8 @@ public class ServiceCadastrarEmpresa implements IServiceCadastrarEmpresa {
 		Empresa empresa = new Empresa();
 		
 		empresa.setNome(empresaModel.getNome());
+		empresa.setTelefone(empresaModel.getTelefone());
+		empresa.setEndereco(empresaModel.getEndereco());
 		
 		this.empresaDao.persist(empresa);
 		
